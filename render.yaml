@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: go-worker-service
+    runtime: docker
+    repo: https://github.com/your-org/go-worker-service
+    branch: main
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: WORKER_MODE
+        value: mock
+      - key: HTTP_PORT
+        value: 8080
